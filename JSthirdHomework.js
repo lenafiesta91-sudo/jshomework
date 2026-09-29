@@ -13,11 +13,12 @@ function checkProbabilityTheory(count){
        odds++;
     }   
     }  
-    let percentOdds = Math.round((odds/count)*100);
-    let percentEvens = Math.round((evens/count)*100);
+    let summaryCount = evens+odds;
+    let percentOdds = Math.round((odds/summaryCount)*100);
+    let percentEvens = Math.round((evens/summaryCount)*100);
     let coef = percentEvens / percentOdds;
-    var coeficient = coef.toFixed(3);
-    console.log("Кількість чисел: ", (evens+odds));
+    let coeficient = coef.toFixed(3);
+    console.log("Кількість чисел: ", summaryCount);
     console.log("Парних: ", evens);
     console.log("Не парних: ", odds);
     
@@ -25,6 +26,7 @@ function checkProbabilityTheory(count){
     console.log("percentEvens: ", percentEvens, "%");
     console.log("coef: ", coeficient);
     return {
+        summaryCount,
         odds,
         evens,
         percentOdds,
