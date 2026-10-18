@@ -1,7 +1,5 @@
 var str = "Wonderful, Joyful, Happiness, Time, Task, Apple";
-var arr = str.split(", ");
-for(let i=0; i<arr.length; i++) {
-    if (arr[i].search(/^[^aA]{6,}$/) !== -1) {
-        console.log(arr[i]);
-    }
-}
+var a = str.replaceAll(", ","\n");
+var re = /^[^aA\s,]{6,}$/gim;
+var res = a.match(re);
+console.log(res);
